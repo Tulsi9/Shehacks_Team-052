@@ -11,16 +11,12 @@ voices = engine.getProperty('voices')
 
 engine.setProperty('voice', voices[0].id)
 
-
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-
-
 def takeCommand():
     
-
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Processing")
@@ -56,8 +52,8 @@ def Greetings():
 
     else:
         speak("Good Evening!")  
-
-    speak(" Please tell me how may I help you")       
+    
+    speak("I am Friday. Please, tell me how may I help you today?")       
     
 
 if __name__ == "__main__":
@@ -70,7 +66,6 @@ if __name__ == "__main__":
             webbrowser.open("google.com")
 
         
-
         elif 'play music' in query:
             music_dir = 'D:\\xyz\\songs\\abc'#path of your music directory
             songs = os.listdir(music_dir)
@@ -100,7 +95,7 @@ if __name__ == "__main__":
             
 
         elif 'open code' in query:
-            codePath = "C:\\Users\\abc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"#target of the application
+            codePath = "C:\\Users\\abc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" #target of the application
             os.startfile(codePath)
             
             
@@ -108,6 +103,12 @@ if __name__ == "__main__":
             webbrowser.open("stackoverflow.com")   
 
             
+        elif 'open amazon' in query :
+            webbrowser.open("amazon.in")
+            
+          
+        elif 'open hotstar' in query:
+            webbrowser.open("hotstar.com/in")
             
 
         elif 'email ' in query:
@@ -119,4 +120,9 @@ if __name__ == "__main__":
                 speak("Email has been sent!")
             except Exception as e:
                 print(e)
-                speak("Sorry Sir. I am not able to send this email")    
+                speak("Sorry Ma'am. I am not able to send this email.")   
+                
+                
+        elif 'bye' in query or 'quit' in query :
+            exit() 
+        
