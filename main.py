@@ -81,7 +81,8 @@ if __name__ == "__main__":
 
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
-            speak("Sir, the time is ",strTime)
+            speak("Ma'am , the time is ")
+            speak(strTime)
             
             
         elif 'wikipedia' in query:
