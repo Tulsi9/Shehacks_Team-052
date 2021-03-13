@@ -63,6 +63,7 @@ if __name__ == "__main__":
         query = takeCommand().lower()
         
         if 'open google' in query:
+            speak("Opening Google.")
             webbrowser.open("google.com")
 
         
@@ -70,12 +71,11 @@ if __name__ == "__main__":
             music_dir = 'D:\\xyz\\songs\\abc'#path of your music directory
             songs = os.listdir(music_dir)
             print(songs) 
-            speak('Which song number do you want me to play')
-            num = takeCommand()
-            os.startfile(os.path.join(music_dir, songs[num-1]))
+            os.startfile(os.path.join(music_dir, songs[0]))
             
             
         elif 'open youtube' in query:
+            speak("Opening YouTube.")
             webbrowser.open("youtube.com")
     
 
@@ -95,23 +95,27 @@ if __name__ == "__main__":
             
 
         elif 'open code' in query:
+            speak("Opening Editor.")
             codePath = "C:\\Users\\abc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe" #target of the application
             os.startfile(codePath)
             
             
-        elif 'open stackoverflow' in query:
+        elif 'open stack overflow' in query:
+            speak("Opening Stack overflow.")
             webbrowser.open("stackoverflow.com")   
 
             
         elif 'open amazon' in query :
+            speak("Opening Amazon.")
             webbrowser.open("amazon.in")
             
           
         elif 'open hotstar' in query:
+            speak("Opening Hotstar.")
             webbrowser.open("hotstar.com/in")
             
 
-        elif 'email ' in query:
+        elif 'send email to <someone> ' in query:
             try:
                 speak("What should I say?")
                 content = takeCommand()
@@ -124,5 +128,6 @@ if __name__ == "__main__":
                 
                 
         elif 'bye' in query or 'quit' in query :
-            exit() 
+            speak("Thank you. Have a nice day!")
+            break  
         
